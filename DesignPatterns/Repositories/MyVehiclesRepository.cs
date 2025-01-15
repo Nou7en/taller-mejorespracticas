@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Models;
+﻿using DesignPatterns.Infraestructure.Singletone;
+using DesignPatterns.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace DesignPatterns.Repositories
 
         public MyVehiclesRepository()
         {
-            _memoryCollection = new List<Vehicle>();
+            _memoryCollection = MemoryCollection.Instance.Vehicles;
         }
 
         public void AddVehicle(Vehicle vehicle)
